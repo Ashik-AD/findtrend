@@ -1,0 +1,56 @@
+@mixin Phone() {
+    @media (min-width: 640px) {
+        @content;
+    }
+}
+
+@mixin Tablet(){
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin SmallDesktop(){
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin Desktop(){
+    @media (min-width: 1290px) {
+        @content;
+    }
+}
+
+@mixin LargeDesktop() {
+    @media (min-width: 1536px){
+        @content;
+    }
+}
+
+@mixin Hover-only-nonetouchable-device() {
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
+}
+
+@mixin element-hover($color){
+    &:hover {
+        background: lighten($color, 10%);
+        transition: 200ms background;
+    }
+}
+
+@mixin Snackbar-first-last-child($first, $last) {
+    &:first-child {
+        left: $first;
+    }
+    &:last-child {
+        left: $last;
+    }
+}
+@mixin Snackbar-nth-child($index) {
+    &:nth-child(#{$index}) {
+        @content;
+    }
+}
